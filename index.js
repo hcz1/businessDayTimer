@@ -26,13 +26,12 @@ function getLastWorkingDay(date) {
 }
 
 const timeTil1800 = (date) => {
-	var hoursleft = 17-date.getHours() > 0 ? 17-date.getHours() : 0;
-  
-	var minutesleft = date.getHours() < 18 ? 59-date.getMinutes() : 0;
-	var secondsleft = date.getHours() < 18 ? 59-date.getSeconds() : 0;
+  const hoursleft = 17-date.getHours() > 0 ? 17-date.getHours() : 0;
+  const minutesleft = date.getHours() < 18 ? 59-date.getMinutes() : 0;
+  const secondsleft = date.getHours() < 18 ? 59-date.getSeconds() : 0;
 
-	if(minutesleft<10) minutesleft = "0"+minutesleft;
-  if(secondsleft<10) secondsleft = "0"+secondsleft;
+  if(minutesleft<10) minutesleft = "0" + minutesleft;
+  if(secondsleft<10) secondsleft = "0" + secondsleft;
   
   return hoursleft+"h : "+minutesleft+"m : "+secondsleft+"s"
 }
@@ -47,7 +46,6 @@ const howManyWorkingDaysLeft = (date) => {
     if(local.getDay() !== 6 && local.getDay() !== 0){
       count++;
     }
-    
   }
   return count;
 }
@@ -78,9 +76,8 @@ const setTime = () => {
   }
   console.log(`${nextBankHol.title})
 	console.log(${new Date(nextBankHol.date).toDateString()}`);
-
 }
-
+//start timer 
 (async () => {
   data = await callData();
   setTime();
